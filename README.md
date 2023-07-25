@@ -20,10 +20,6 @@ Include special characters?
 
 After answering these questions your password is reveled - the pass word can be copied and pasted.
 
-    ```md
-    ![link to screenshot]  (assets/Screenshot.png)
-    ```
-
 ## License
 
 MIT License
