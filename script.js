@@ -136,7 +136,39 @@ function getRandom(arr) {
 }
 
 // Function to generate password with user input
-function generatePassword() {}
+function generatePassword() {
+  var options = getPasswordOptions();
+
+  // If user cancels or doesn't provide valid options, return an empty string
+  if (!options) {
+    return "";
+  }
+
+  var availableChars = "";
+
+  if (options.includeLowercase) {
+    availableChars += lowerCasedCharacters.join("");
+  }
+
+  if (options.includeUppercase) {
+    availableChars += upperCasedCharacters.join("");
+  }
+
+  if (options.includeNumeric) {
+    availableChars += numericCharacters.join("");
+  }
+
+  if (options.includeSpecialChars) {
+    availableChars += specialCharacters.join("");
+  }
+
+  var generatedPassword = "";
+  for (var i = 0; i < options.passwordLength; i++) {
+    generatedPassword += getRandom(availableChars);
+  }
+
+  return generatedPassword;
+}
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
