@@ -20,6 +20,9 @@ Include special characters?
 
 After answering these questions your password is reveled - the pass word can be copied and pasted.
 
+This screen shows image after red button has been selected/clicked
+[![Alt Text](./assets/Screenshot.png)]
+
 ## License
 
 MIT License
