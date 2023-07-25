@@ -94,6 +94,40 @@ function getPasswordOptions() {
     "Enter the length of the password (between 8 and 128 characters):"
   );
 }
+// Validate password length
+if (
+  !passwordLength ||
+  isNaN(passwordLength) ||
+  passwordLength < 8 ||
+  passwordLength > 128
+) {
+  alert("Please enter a valid password length between 8 and 128 characters.");
+  return null;
+}
+
+var includeLowercase = confirm("Include lowercase characters?");
+var includeUppercase = confirm("Include uppercase characters?");
+var includeNumeric = confirm("Include numeric characters?");
+var includeSpecialChars = confirm("Include special characters?");
+
+// Validate at least one character type is selected
+if (
+  !includeLowercase &&
+  !includeUppercase &&
+  !includeNumeric &&
+  !includeSpecialChars
+) {
+  alert("You must select at least one character type.");
+  return null;
+}
+
+return {
+  passwordLength,
+  includeLowercase,
+  includeUppercase,
+  includeNumeric,
+  includeSpecialChars,
+};
 
 // Function for getting a random element from an array
 function getRandom(arr) {}
